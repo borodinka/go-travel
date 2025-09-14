@@ -1,3 +1,5 @@
+import Landing from "@features/landing/components/Landing";
+
 export default function HomePage() {
-  return <div>Home</div>;
+  return <Landing />;
 }
