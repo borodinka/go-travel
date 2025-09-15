@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import { Box, Stack, Typography } from "@mui/material";
 
 import { Colors, FontWeights } from "@config/styles";
@@ -9,8 +11,19 @@ interface Props {
 }
 
 export default function AdvantageCard({ Icon, title, subtitle }: Props) {
+  const item = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7 },
+    },
+  };
+
   return (
     <Stack
+      component={motion.div}
+      variants={item}
       py={{ xs: 3, md: 4 }}
       px={{ xs: 1, md: 4 }}
       width={{ xs: "100%", md: 446 }}
