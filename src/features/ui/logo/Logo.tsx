@@ -1,16 +1,24 @@
 import { Box, Typography } from "@mui/material";
 
 import { APP_NAME } from "@config/constants";
+import { FontWeights } from "@config/styles";
 
 interface Props {
   isMinimized?: boolean;
+  isSmall?: boolean;
+  isLanding?: boolean;
+  isFooter?: boolean;
 }
 
-function LogoIcon() {
+interface IconProps {
+  isSmall?: boolean;
+}
+
+function LogoIcon({ isSmall }: IconProps) {
   return (
     <svg
-      width="46"
-      height="46"
+      width={isSmall ? "34" : "46"}
+      height={isSmall ? "34" : "46"}
       viewBox="0 0 46 46"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +32,12 @@ function LogoIcon() {
   );
 }
 
-export default function Logo({ isMinimized }: Props) {
+export default function Logo({
+  isMinimized,
+  isSmall,
+  isLanding,
+  isFooter,
+}: Props) {
   return (
     <Box
       sx={{
@@ -32,12 +45,22 @@ export default function Logo({ isMinimized }: Props) {
         alignItems: "center",
         justifyContent: "center",
         height: 60,
-        width: "100%",
-        gap: 2.5,
+        width: isLanding ? "fit-content" : "100%",
+        gap: isSmall ? 2 : 2.5,
       }}
     >
-      <LogoIcon />
-      {!isMinimized && <Typography variant="h4">{APP_NAME}</Typography>}
+      <LogoIcon isSmall={isSmall} />
+      {!isMinimized && (
+        <Typography
+          variant="h4"
+          fontWeight={isLanding ? FontWeights.semibold : ""}
+          fontSize={
+            isFooter ? "1.563rem !important" : isLanding ? "1.563rem" : "1.5rem"
+          }
+        >
+          {APP_NAME}
+        </Typography>
+      )}
     </Box>
   );
 }

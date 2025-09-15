@@ -1,5 +1,10 @@
 import LoadingButton from "@mui/lab/LoadingButton";
-import { type SxProps, type Theme, Typography } from "@mui/material";
+import {
+  type SxProps,
+  type Theme,
+  Typography,
+  type TypographyProps,
+} from "@mui/material";
 
 interface Props {
   type?: "button" | "submit" | "reset";
@@ -22,6 +27,7 @@ interface Props {
     | "error"
     | "info"
     | "warning";
+  textVariant?: TypographyProps["variant"];
   sx?: SxProps<Theme>;
 }
 
@@ -38,6 +44,7 @@ export default function AppButton({
   endIcon,
   isSmall,
   color,
+  textVariant,
   sx,
   onClick,
 }: Props) {
@@ -65,7 +72,7 @@ export default function AppButton({
         ...sx,
       }}
     >
-      <Typography component="span" variant="body2">
+      <Typography component="span" variant={textVariant ?? "body2"}>
         {children}
       </Typography>
     </LoadingButton>

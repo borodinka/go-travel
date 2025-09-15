@@ -14,7 +14,7 @@ const theme = createTheme({
       main: "#EB5757",
     },
     text: {
-      primary: "#223544",
+      primary: "#223644",
       secondary: "#64727C",
     },
     grey: {
@@ -220,7 +220,7 @@ theme.typography.subtitle1 = {
   lineHeight: "1.5rem",
 };
 
-theme.typography.subtitle1 = {
+theme.typography.subtitle2 = {
   fontFamily: FontFamilies.poppins,
   fontWeight: FontWeights.medium,
   fontSize: "1rem",
