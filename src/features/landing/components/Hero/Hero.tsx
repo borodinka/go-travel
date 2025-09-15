@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import { Box, Stack, Typography } from "@mui/material";
 
 import { APP_NAME } from "@config/constants";
@@ -20,6 +22,7 @@ interface Props {
 
 export default function Hero({ onButtonClick }: Props) {
   const { md, xl } = useBreakpoints();
+  const heroTitle = "Your Ultimate Trip Companion".split(" ");
 
   return (
     <Stack
@@ -68,7 +71,19 @@ export default function Hero({ onButtonClick }: Props) {
             mt: 3,
           }}
         >
-          Your Ultimate Trip Companion
+          {heroTitle.map((el, i) => (
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.7,
+                delay: i / 7,
+              }}
+              key={i}
+            >
+              {el}{" "}
+            </motion.span>
+          ))}
         </Typography>
         <Typography
           variant="h6"

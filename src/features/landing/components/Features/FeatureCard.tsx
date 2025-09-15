@@ -1,3 +1,6 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 import { Stack, Typography } from "@mui/material";
 
 import { FontWeights } from "@config/styles";
@@ -20,10 +23,17 @@ export default function FeatureCard({
   subtitle,
   isReverse,
 }: Props) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const { md } = useBreakpoints();
 
   return (
     <Stack
+      ref={ref}
+      component={motion.div}
+      initial={{ opacity: 0, x: isReverse ? 150 : -150 }}
+      animate={isInView ? { opacity: 1, x: 0 } : ""}
+      transition={{ duration: 0.7 }}
       direction={!md ? "column" : isReverse ? "row-reverse" : "row"}
       justifyContent="space-between"
       alignItems="center"
