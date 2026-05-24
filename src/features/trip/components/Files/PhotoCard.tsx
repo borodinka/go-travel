@@ -53,7 +53,7 @@ export default function PhotoCard({
         aria-label="remove photo"
         onClick={(event) => {
           event?.stopPropagation();
-          onRemoveClick;
+          onRemoveClick();
         }}
         variant="contained"
         isSmall={!md}

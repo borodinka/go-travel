@@ -146,7 +146,9 @@ export default function AccountLayout() {
                   <MenuIcon
                     sx={{
                       color: {
-                        xs: isPrimaryNavBackgroundColor ? "white" : "grey.100",
+                        xs: isPrimaryNavBackgroundColor
+                          ? "white"
+                          : "primary.main",
                         md: "primary.main",
                       },
                       fontSize: 40,
