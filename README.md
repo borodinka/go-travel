@@ -40,7 +40,7 @@
 
 ---
 
-### 📱 Mobile Experience
+### Mobile Experience
 
 > Fully responsive layout with adaptive sidebars and mobile-optimized navigation.
 
@@ -73,6 +73,7 @@
 | **Deployment & CI/CD** | Firebase Hosting, GitHub Actions           |
 | **Code Quality**       | ESLint, Prettier                           |
 | **Utilities**          | Lodash (debounce)                          |
+| **Testing**            | Vitest, React Testing Library, Cypress     |
 
 ---
 

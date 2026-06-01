@@ -1,11 +1,11 @@
 import { MAX_TRIP_DESTINATIONS } from "../constants";
-import Destinations from "./components/Steps/Destinations";
+import Destinations from "./components/Steps/Destinations/Destinations";
 import Documents from "./components/Steps/Documents";
 import Expenses from "./components/Steps/Expenses";
 import PackingLists from "./components/Steps/PackingLists";
 import Photos from "./components/Steps/Photos";
 import Places from "./components/Steps/Places";
-import TravelInfo from "./components/Steps/TripInfo";
+import TravelInfo from "./components/Steps/TripInfo/TripInfo";
 import { WizardSteps } from "./types";
 
 export const WIZARDS_STEPS: WizardSteps[] = [

@@ -17,16 +17,16 @@ import { useBreakpoints } from "@hooks/useBreakpoints";
 import useDialog from "@hooks/useDialog";
 import { useAppDispatch, useAppSelector } from "@store/index";
 
-import PreviewImageDialog from "../../../components/PreviewImageDialog";
-import { usePreviewImageSrc } from "../../../hooks/usePreviewImageSrc";
-import type { Trip } from "../../../types";
+import PreviewImageDialog from "../../../../components/PreviewImageDialog";
+import { usePreviewImageSrc } from "../../../../hooks/usePreviewImageSrc";
+import type { Trip } from "../../../../types";
 import {
   nextStep,
   selectWizardTrip,
   setPreviewImage,
   setTravelInformation,
-} from "../../store/tripWizardSlice";
-import Pagination from "../Navigation/Pagination";
+} from "../../../store/tripWizardSlice";
+import Pagination from "../../Navigation/Pagination";
 
 interface FormInput {
   previewImage: Trip["previewImage"];

@@ -8,7 +8,6 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -27,7 +26,8 @@
       "@config/*": ["./src/app/config/*"],
       "@store/*": ["./src/app/store/*"],
       "@services/*": ["./src/app/services/*"],
-      "@hooks/*": ["./src/app/hooks/*"]
+      "@hooks/*": ["./src/app/hooks/*"],
+      "@test/*": ["./src/test/*"]
     }
   },
   "include": ["src"],
