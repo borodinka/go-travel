@@ -14,15 +14,15 @@ import AppButton from "@features/ui/AppButton";
 import AppIconButton from "@features/ui/AppIconButton";
 import { useAppDispatch, useAppSelector } from "@store/index";
 
-import { MAX_TRIP_DESTINATIONS } from "../../../constants";
-import type { Trip } from "../../../types";
+import { MAX_TRIP_DESTINATIONS } from "../../../../constants";
+import type { Trip } from "../../../../types";
 import {
   nextStep,
   selectWizardTrip,
   setDestinations,
   setLocationFrom,
-} from "../../store/tripWizardSlice";
-import Pagination from "../Navigation/Pagination";
+} from "../../../store/tripWizardSlice";
+import Pagination from "../../Navigation/Pagination";
 
 interface FormInput {
   locationFrom: Trip["locationFrom"];
